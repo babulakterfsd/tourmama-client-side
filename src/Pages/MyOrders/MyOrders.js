@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
 import { Container, Row } from "react-bootstrap";
-import SinglepackageCard from "../AllPackages/SinglePackageCard/SinglepackageCard";
+import MyOrderCard from './MyOrderCard/MyOrderCard'
 import useAuth from '../../Assets/hooks/useAuth'
 
-const MyOrders = () => {
+const MyOrders = () => {    
   const {user} = useAuth();
   
   const [myOrders, setMyOrders] = useState([]);
@@ -14,7 +14,6 @@ const MyOrders = () => {
       .then((res) => res.json())
       .then((data) => setMyOrders(data));
   }, []);
-
   
 
   useEffect(() => {
@@ -30,10 +29,9 @@ const MyOrders = () => {
       </Row>
       <Row xs={1} md={2} lg={3} className="my-5">
         {myOrders.map((detail) => (
-          <SinglepackageCard
-            key={detail.id}
-            detail={detail}
-          ></SinglepackageCard>
+          <MyOrderCard key={detail.id}
+          detail={detail}>
+          </MyOrderCard>
         ))}
       </Row>
     </Container>
