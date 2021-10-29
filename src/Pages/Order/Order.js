@@ -11,8 +11,6 @@ const Order = () => {
 
   const [orderedPack, setOrderedPack] = useState({});
 
-  console.log(orderedPack);
-
   useEffect(() => {
     fetch(`http://localhost:5000/order/${packid}`)
       .then((res) => res.json())
