@@ -2,15 +2,20 @@ import React, { useEffect } from "react";
 import { useState } from "react";
 import { Container, Row } from "react-bootstrap";
 import SinglepackageCard from "../AllPackages/SinglePackageCard/SinglepackageCard";
+import useAuth from '../../Assets/hooks/useAuth'
 
 const MyOrders = () => {
+  const {user} = useAuth();
+  
   const [myOrders, setMyOrders] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/myorders")
+    fetch(`http://localhost:5000/myorders/${user?.email}`)
       .then((res) => res.json())
       .then((data) => setMyOrders(data));
   }, []);
+
+  
 
   useEffect(() => {
     document.title = "My Orders | TourMama";
