@@ -91,6 +91,14 @@ const Footer = () => {
                         >
                           Packages
                         </Link>
+                        </li>
+                        <li>
+                        <Link
+                          to="/login"
+                          className="text-decoration-none text-light-green fw-semi-bold mx-2"
+                        >
+                          Login
+                        </Link>
                       </li>
                     </ul>
                   </h6>

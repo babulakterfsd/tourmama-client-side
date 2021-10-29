@@ -17,6 +17,11 @@ const About = () => {
               </span>
             </h5>
           </Row>
+          <Row>
+            <div className="col-12 col-md-6 col-lg-8 mx-auto">
+              <img src="https://i.ibb.co/Bzqn3t8/influence.png" alt="aboutimg" className="img-fluid" />
+            </div>
+          </Row>
           <Row className="my-5">
             <div className="col-12 col-md-6 col-lg-3 py-3">
               <i className="fas fa-car-side text-light-green fa-2x"></i>

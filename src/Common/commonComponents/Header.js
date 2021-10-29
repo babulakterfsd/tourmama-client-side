@@ -3,6 +3,7 @@ import { Container, Nav, Navbar, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import useAuth from "../../Assets/hooks/useAuth";
 import Logo from "../../Assets/Images/logo.png";
+import './Header.css'
 
 const Header = () => {
   const { user, logOut } = useAuth();
@@ -31,19 +32,19 @@ const Header = () => {
         <Navbar.Collapse id="navbarScroll">
           <Nav className="ms-auto my-2 my-md-0 me-lg-5 fw-semi-bold d-flex align-items-center">
             <Link to="/" className="text-decoration-none mx-2 mb-2 mb-md-0">
-              <span className="text-muted">Home</span>
+              <span className="text-muted mylink">Home</span>
             </Link>
             <Link
               to="/about"
               className="text-decoration-none  mx-2 mb-2 mb-md-0"
             >
-              <span className="text-muted">About</span>
+              <span className="text-muted mylink">About</span>
             </Link>
             <Link
               to="/allpackages"
               className="text-decoration-none  mx-2 mb-2 mb-md-0"
             >
-              <span className="text-muted">Packages</span>
+              <span className="text-muted mylink">Packages</span>
             </Link>
 
             <div className="user-state-in-header ms-md-5">

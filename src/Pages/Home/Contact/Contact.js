@@ -1,6 +1,5 @@
 import React from "react";
 import {  Container, Form, Row, Button } from "react-bootstrap";
-import ContactImg from "../../../Assets/Images/contact.jpg";
 
 const Contact = () => {
   return (
@@ -22,7 +21,7 @@ const Contact = () => {
           <Row>
             <div className="col-12 col-md-6">
               <img
-                src={ContactImg}
+                src='https://i.ibb.co/wRfy5YZ/contact.png'
                 alt="contactImg"
                 className="img-fluid w-100"
               />

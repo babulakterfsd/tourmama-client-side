@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, Row, Button } from 'react-bootstrap';
-import InfluenceImg from "../../../Assets/Images/influenceOverlay.png";
+import { Link } from 'react-router-dom';
 
 const Influence = () => {
     return (
@@ -8,7 +8,7 @@ const Influence = () => {
         <Container>
           <Row>
             <div className="col-12 col-md-8">
-              <img src={InfluenceImg} alt="about in home" className="img-fluid" />
+              <img src='https://i.ibb.co/G9YdRWr/influence-Overlay.png' alt="about in home" className="img-fluid" />
             </div>
             <div
               className="col-12 col-md-4 d-flex flex-wrap align-items-center"
@@ -27,9 +27,11 @@ const Influence = () => {
                   lacinia sit amet nec eros. Nulla vel urna quis libero pharetra
                   varius. Nulla tellus nunc.
                 </p>
-                <Button className="btn-light-green p-3 fw-bold d-block d-lg-inline mx-auto  ">
-                  See Our Packages
-                </Button>
+                <Link to="/allpackages">
+                  <Button className="btn-light-green p-3 ms-3 ms-lg-0 text-white fw-bold">
+                    See Our Packages
+                  </Button>
+                </Link>
               </div>
             </div>
           </Row>
