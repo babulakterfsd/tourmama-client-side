@@ -3,7 +3,7 @@ import { Container, Nav, Navbar, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import useAuth from "../../Assets/hooks/useAuth";
 import Logo from "../../Assets/Images/logo.png";
-import './Header.css'
+import "./Header.css";
 
 const Header = () => {
   const { user, logOut } = useAuth();
@@ -46,10 +46,34 @@ const Header = () => {
             >
               <span className="text-muted mylink">Packages</span>
             </Link>
+            {
+              (user?.email || user?.displayName) && (
+                <>
+                  <Link
+                    to="/myorders"
+                    className="text-decoration-none  mx-2 mb-2 mb-md-0"
+                  >
+                    <span className="d-inline-block text-muted mylink mx-auto my-2">My Orders</span>
+                  </Link>
+                  <Link
+                    to="/manageorders"
+                    className="text-decoration-none  mx-2 mb-2 mb-md-0"
+                  >
+                    <span className="d-inline-block text-muted mylink mx-auto my-2">Manage Orders</span>
+                  </Link>
+                  <Link
+                    to="/addorders"
+                    className="text-decoration-none  mx-2 mb-2 mb-md-0"
+                  >
+                    <span className="d-inline-block text-muted mylink mx-auto my-2">Add Orders</span>
+                  </Link>
+                </>
+              )
+            }
 
             <div className="user-state-in-header ms-md-5">
               {user?.email || user?.displayName ? (
-                <div className="loggedin">
+                <div className="userinfo">
                   <img
                     src={user?.photoURL}
                     alt="userimg"
@@ -58,6 +82,7 @@ const Header = () => {
                       width: "40px",
                       borderRadius: "100%",
                       marginRight: "4px",
+                      marginLeft: "8px",
                     }}
                   />
                   <span className="text-muted fw-bold mx-md-2 me-2">
