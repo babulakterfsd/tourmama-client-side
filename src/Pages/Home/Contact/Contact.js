@@ -80,7 +80,7 @@ const Contact = () => {
                   <Button
                     onClick={(e) => e.preventDefault()}
                     type="submit"
-                    className="btn-light-green p-3 fw-bold"
+                    className="btn-light-green p-3 fw-bold shadow-none"
                   >
                     Send Your Query
                   </Button>

@@ -1,13 +1,13 @@
 import React from "react";
 import { Col, Container, Form, Row, Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
-// import { useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import useAuth from "../../Assets/hooks/useAuth";
 
 const Order = () => {
   const { user } = useAuth();
-  // const history = useHistory();
-  // const redirect_uri = "/";
+  const history = useHistory();
+  const redirect_uri = "/myorders";
 
   //react hook form
   const {
@@ -19,11 +19,10 @@ const Order = () => {
   const onSubmit = (data) => {
     data.status = 'pending';
     console.log(data);
-    // history.push(redirect_uri)
+    history.push(redirect_uri)
   };
 
   return (
-    <>
       <Container>
         <Row>
           <div className="col-12 col-md-10 col-lg-8 mx-auto">
@@ -84,7 +83,6 @@ const Order = () => {
           </div>
         </Row>
       </Container>
-    </>
   );
 };
 

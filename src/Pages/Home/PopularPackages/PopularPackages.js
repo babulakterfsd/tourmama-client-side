@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
-import { Container, Row, Button } from "react-bootstrap";
+import { Container, Row, Button, Spinner } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import SinglepackageCard from "../../AllPackages/SinglePackageCard/SinglepackageCard";
 
@@ -9,10 +9,18 @@ const PopularPackages = () => {
   const [packDetails, setPackDetails] = useState([]);
 
   useEffect(() => {
-    fetch("/packages.json")
+    fetch("http://localhost:5000/allpackages")
       .then((res) => res.json())
       .then((data) => setPackDetails(data));
   }, []);
+
+  if (packDetails.length === 0) {
+    return (
+      <div className="d-flex justify-content-center align-items-center">
+        <Spinner animation="border" variant="success" />
+      </div>
+    );
+  }
 
   return (
     <section
@@ -33,9 +41,9 @@ const PopularPackages = () => {
           </p>
         </Row>
         <Row xs={1} md={2} lg={3} className="mt-5">
-          {packDetails.slice(0, 6).map((detail) => (
+          {packDetails.slice(12, 50).map((detail) => (
             <SinglepackageCard
-              key={detail.id}
+              key={detail._id}
               detail={detail}
             ></SinglepackageCard>
           ))}

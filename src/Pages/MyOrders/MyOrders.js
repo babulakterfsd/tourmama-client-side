@@ -4,12 +4,12 @@ import { Container, Row } from "react-bootstrap";
 import SinglepackageCard from "../AllPackages/SinglePackageCard/SinglepackageCard";
 
 const MyOrders = () => {
-  const [packDetails, setPackDetails] = useState([]);
+  const [myOrders, setMyOrders] = useState([]);
 
   useEffect(() => {
-    fetch("/packages.json")
+    fetch("http://localhost:5000/myorders")
       .then((res) => res.json())
-      .then((data) => setPackDetails(data));
+      .then((data) => setMyOrders(data));
   }, []);
 
   useEffect(() => {
@@ -24,7 +24,7 @@ const MyOrders = () => {
         </div>
       </Row>
       <Row xs={1} md={2} lg={3} className="my-5">
-        {packDetails.map((detail) => (
+        {myOrders.map((detail) => (
           <SinglepackageCard
             key={detail.id}
             detail={detail}

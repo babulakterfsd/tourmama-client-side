@@ -1,13 +1,13 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
-import { Container, Row } from "react-bootstrap";
+import { Container, Row, Spinner } from "react-bootstrap";
 import SinglepackageCard from "./SinglePackageCard/SinglepackageCard";
 
 const AllPackages = () => {
   const [packDetails, setPackDetails] = useState([]);
 
   useEffect(() => {
-    fetch('/packages.json')
+    fetch('http://localhost:5000/allpackages')
      .then(res => res.json())
       .then(data => setPackDetails(data))
   }, [])
@@ -15,6 +15,14 @@ const AllPackages = () => {
   useEffect(() => {
     document.title = "All Packages | TourMama"
   },[])
+
+  if (packDetails.length === 0) {
+    return (
+      <div style={{minHeight: '100vh'}} className="d-flex justify-content-center align-items-center">
+        <Spinner animation="border" variant="success" />
+      </div>
+    );
+  }
 
   return (
     <>
@@ -38,7 +46,7 @@ const AllPackages = () => {
           <Row xs={1} md={2} lg={3} className="my-5">
             {packDetails.map((detail) => (
               <SinglepackageCard
-                key={detail.id}
+                key={detail._id}
                 detail={detail}
               ></SinglepackageCard>
             ))}
