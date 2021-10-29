@@ -1,8 +1,11 @@
 import React from "react";
 import { Col, Container, Form, Row, Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
+import { useHistory } from "react-router-dom";
 
 const AddOrders = () => {
+  const history = useHistory();
+  const redirect_uri = "/";
   //react hook form
   const {
     register,
@@ -38,13 +41,10 @@ const AddOrders = () => {
       .then(res => res.json())
        .then(data => {
            if(data.insertedId) {
-               alert('Package Added Successfully !')
+               alert('Package Added Successfully !');
+               history.push(redirect_uri)
            }
        })
-
-    
-
-    console.log(data);
   };
 
   return (

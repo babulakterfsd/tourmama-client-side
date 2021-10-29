@@ -13,7 +13,7 @@ const MyOrders = () => {
   }, []);
 
   useEffect(() => {
-    document.title = "All Packages | TourMama";
+    document.title = "My Orders | TourMama";
   }, []);
 
   return (

@@ -27,7 +27,7 @@ const SinglepackageCard = ({ detail }) => {
           <p className="text-cyan">we provide: {detail.services.join(", ")}</p>
         </Card.Body>
         <Card.Footer className="d-flex justify-content-center">
-          <Link to='/order'>
+          <Link to={`order/${detail?._id}`}>
             <Button className="btn-light-green  py-2 px-3">Book Package</Button>
           </Link>
         </Card.Footer>

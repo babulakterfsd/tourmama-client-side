@@ -32,7 +32,7 @@ function App() {
           <Route exact path="/allpackages">
             <AllPackages></AllPackages>
           </Route>
-          <PrivateRoute exact path="/order">
+          <PrivateRoute exact path="/order/:packid">
             <Order></Order>
           </PrivateRoute>
           <PrivateRoute exact path="/myorders">

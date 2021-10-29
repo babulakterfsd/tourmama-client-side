@@ -1,13 +1,15 @@
 import React from "react";
 import { Col, Container, Form, Row, Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
-import { useHistory } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 import useAuth from "../../Assets/hooks/useAuth";
 
 const Order = () => {
   const { user } = useAuth();
   const history = useHistory();
   const redirect_uri = "/myorders";
+
+  const {packid} = useParams()
 
   //react hook form
   const {
@@ -22,6 +24,8 @@ const Order = () => {
     history.push(redirect_uri)
   };
 
+  
+
   return (
       <Container>
         <Row>
@@ -34,6 +38,8 @@ const Order = () => {
                 <h2 className="mb-4 text-center">
                   Choose A Package, We Store and Process Your Order!
                 </h2>
+
+                <h5>{packid}</h5>
 
                 <Row className="mb-3">
                   <Form.Group as={Col} controlId="formGridName">
