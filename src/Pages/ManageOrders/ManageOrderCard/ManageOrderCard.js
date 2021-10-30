@@ -1,7 +1,7 @@
 import React from "react";
 import { Card, Col, Button } from "react-bootstrap";
 import { useHistory } from "react-router";
-import "./MyOrderCard.css";
+import "./ManageOrderCard.css";
 
 const SinglepackageCard = ({ detail }) => {
 
@@ -13,6 +13,7 @@ const SinglepackageCard = ({ detail }) => {
   const handleDeletePack = (id) => {
     const proceed = window.confirm("Are you sure to delete the user?");
     if (proceed) {
+      
       const url = `http://localhost:5000/allorder/${id}`;
 
       fetch(url, {
