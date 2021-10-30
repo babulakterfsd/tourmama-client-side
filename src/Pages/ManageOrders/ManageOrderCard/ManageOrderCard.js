@@ -45,7 +45,8 @@ const SinglepackageCard = ({ detail }) => {
         .then(res => res.json())
         .then(data => {
             if (data.modifiedCount > 0) {
-                alert('Order Approved !')
+                alert('Order Approved !');
+                history.push(redirect_uri)
             }
         })
 }
@@ -73,7 +74,7 @@ const SinglepackageCard = ({ detail }) => {
 
           <Card.Title className="abril-font">{`${detail?.order?.location?.city}, ${detail?.order?.location?.country}`}</Card.Title>
           <p className="text-cyan">we provide: {detail?.order?.services.join(", ")}</p>
-          <span className="text-danger fw-bolder"> <span className="text-cyan fw-semi-bolder">Order Status : </span> {detail?.status}</span>
+          <span className="text-danger fw-bolder"> <span className="text-cyan fw-semi-bolder">Order Status: </span> {detail?.status}</span>
         </Card.Body>
         <Card.Footer className="d-flex justify-content-between">
             <Button onClick={() => handleDeletePack(detail?._id)} className="btn-danger text-white  py-2 px-3">Cancel Order</Button>
