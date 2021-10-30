@@ -27,6 +27,7 @@ const MyOrders = () => {
       <Row>
         <div className="col-12 col-md-8 mx-auto">
           <h3 className="text-light-green text-center mt-5 mb-3 text-decoration-underline">My Orders List</h3>
+          <h5 className="text-cyan text-center mb-3">I have Ordered {myOrders.length} package </h5>
         </div>
       </Row>
       <Row xs={1} md={2} lg={3} className="my-5">
