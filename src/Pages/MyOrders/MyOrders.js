@@ -9,6 +9,8 @@ const MyOrders = () => {
   
   const [myOrders, setMyOrders] = useState([]);
 
+
+
   useEffect(() => {
     fetch(`http://localhost:5000/myorders/${user?.email}`)
       .then((res) => res.json())
@@ -29,7 +31,7 @@ const MyOrders = () => {
       </Row>
       <Row xs={1} md={2} lg={3} className="my-5">
         {myOrders.map((detail) => (
-          <MyOrderCard key={detail.id}
+          <MyOrderCard key={detail._id}
           detail={detail}>
           </MyOrderCard>
         ))}

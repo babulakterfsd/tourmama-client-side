@@ -28,8 +28,9 @@ const Order = () => {
   } = useForm();
 
   const onSubmit = (data) => {
-    orderedPack.status = "pending";
-    orderedPack.email = data.email
+    data.status = "pending";
+    data.email = user?.email;
+    data.order = orderedPack;
     
 
     fetch("http://localhost:5000/placeorder", {
@@ -37,7 +38,7 @@ const Order = () => {
       headers: {
         "content-type": "application/json",
       },
-      body: JSON.stringify(orderedPack),
+      body: JSON.stringify(data),
     })
       .then((res) => res.json())
       .then((data) => {
