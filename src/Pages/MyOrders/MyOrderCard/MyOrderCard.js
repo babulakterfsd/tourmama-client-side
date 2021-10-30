@@ -1,14 +1,16 @@
 import React from "react";
 import { Card, Col, Button } from "react-bootstrap";
+import { useHistory } from "react-router";
 import "./MyOrderCard.css";
 
 const SinglepackageCard = ({ detail }) => {
 
+  const history = useHistory();
+    const redirect_uri = "/";
   
 
   //delete a package
   const handleDeletePack = (id) => {
-    console.log(id);
     const proceed = window.confirm("Are you sure to delete the user?");
     if (proceed) {
       console.log('delete hoy na kaa');
@@ -22,7 +24,7 @@ const SinglepackageCard = ({ detail }) => {
           console.log(data);
           if (data.deletedCount > 0) {
             alert("Deleted Successfully !");
-            console.log('delete not works');
+            history.push(redirect_uri);
             // const remainingPacks = packDetails.filter((pack) => pack._id !== id);
             // setPackDetails(remainingPacks);
           }
