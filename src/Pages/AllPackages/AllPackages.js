@@ -7,7 +7,7 @@ const AllPackages = () => {
   const [packDetails, setPackDetails] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:5000/allpackages')
+    fetch('https://radiant-shore-89532.herokuapp.com/allpackages')
      .then(res => res.json())
       .then(data => setPackDetails(data))
   }, [])

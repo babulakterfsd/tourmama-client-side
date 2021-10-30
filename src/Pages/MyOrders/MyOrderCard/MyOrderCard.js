@@ -13,7 +13,7 @@ const SinglepackageCard = ({ detail }) => {
   const handleDeletePack = (id) => {
     const proceed = window.confirm("Are you sure to delete the user?");
     if (proceed) {
-      const url = `http://localhost:5000/allorder/${id}`;
+      const url = `https://radiant-shore-89532.herokuapp.com/allorder/${id}`;
 
       fetch(url, {
         method: "DELETE"

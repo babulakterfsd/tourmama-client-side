@@ -31,7 +31,7 @@ const AddOrders = () => {
     data.duration = "3 days / 4 nights";
     data.price = 4500;
 
-    fetch('http://localhost:5000/addpackage', {
+    fetch('https://radiant-shore-89532.herokuapp.com/addpackage', {
         method: 'POST',
         headers: {
             'content-type': 'application/json'

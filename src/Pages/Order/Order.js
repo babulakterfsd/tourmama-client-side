@@ -12,7 +12,7 @@ const Order = () => {
   const [orderedPack, setOrderedPack] = useState({});
 
   useEffect(() => {
-    fetch(`http://localhost:5000/order/${packid}`)
+    fetch(`https://radiant-shore-89532.herokuapp.com/order/${packid}`)
       .then((res) => res.json())
       .then((data) => setOrderedPack(data));
   }, []);
@@ -33,7 +33,7 @@ const Order = () => {
     data.order = orderedPack;
     
 
-    fetch("http://localhost:5000/placeorder", {
+    fetch("https://radiant-shore-89532.herokuapp.com/placeorder", {
       method: "POST",
       headers: {
         "content-type": "application/json",
