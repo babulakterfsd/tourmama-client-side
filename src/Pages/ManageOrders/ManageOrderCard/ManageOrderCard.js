@@ -30,6 +30,8 @@ const SinglepackageCard = ({ detail }) => {
     }
   };
 
+ 
+
   return (
     <Col>
       <Card className="shadow-lg mb-5">
@@ -53,8 +55,9 @@ const SinglepackageCard = ({ detail }) => {
           <p className="text-cyan">we provide: {detail?.order?.services.join(", ")}</p>
           <span className="text-danger fw-bolder"> <span className="text-cyan fw-semi-bolder">Order Status : </span> {detail?.status}</span>
         </Card.Body>
-        <Card.Footer className="d-flex justify-content-center">
+        <Card.Footer className="d-flex justify-content-between">
             <Button onClick={() => handleDeletePack(detail?._id)} className="btn-danger text-white  py-2 px-3">Cancel Order</Button>
+            <Button className="btn-light-green py-2 px-3">Approve Order</Button>
         </Card.Footer>
       </Card>
     </Col>
