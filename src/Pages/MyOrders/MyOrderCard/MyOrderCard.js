@@ -25,8 +25,6 @@ const SinglepackageCard = ({ detail }) => {
           if (data.deletedCount > 0) {
             alert("Deleted Successfully !");
             history.push(redirect_uri);
-            // const remainingPacks = packDetails.filter((pack) => pack._id !== id);
-            // setPackDetails(remainingPacks);
           }
         });
     }
