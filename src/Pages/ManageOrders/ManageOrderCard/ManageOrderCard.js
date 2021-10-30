@@ -5,6 +5,8 @@ import "./ManageOrderCard.css";
 
 const SinglepackageCard = ({ detail }) => {
 
+  console.log(detail);
+
   const history = useHistory();
     const redirect_uri = "/";
   
@@ -29,6 +31,24 @@ const SinglepackageCard = ({ detail }) => {
         });
     }
   };
+
+  const handleUpdate = (id) => {
+    const url = `http://localhost:5000/allorder/${id}`;
+
+    fetch(url, {
+        method: 'PUT',
+        headers: {
+            'content-type': 'application/json'
+        },
+        body: JSON.stringify(detail)
+    })
+        .then(res => res.json())
+        .then(data => {
+            if (data.modifiedCount > 0) {
+                alert('Order Approved !')
+            }
+        })
+}
 
  
 
@@ -57,7 +77,7 @@ const SinglepackageCard = ({ detail }) => {
         </Card.Body>
         <Card.Footer className="d-flex justify-content-between">
             <Button onClick={() => handleDeletePack(detail?._id)} className="btn-danger text-white  py-2 px-3">Cancel Order</Button>
-            <Button className="btn-light-green py-2 px-3">Approve Order</Button>
+            <Button onClick={() => handleUpdate(detail?._id)} className="btn-light-green py-2 px-3">Approve Order</Button>
         </Card.Footer>
       </Card>
     </Col>
