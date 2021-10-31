@@ -67,13 +67,22 @@ const SinglepackageCard = ({ detail }) => {
             we provide: {detail?.order?.services.join(", ")}
           </p>
 
-          <h6 className="text-danger fw-bolder">
+        {
+          detail?.status === 'approved' ? (<h6 className="text-light-green fw-bolder">
+          {" "}
+          <span className="text-cyan fw-semi-bolder">
+            Order Status:{" "}
+          </span>{" "}
+          {detail?.status}
+        </h6>) : (<h6 className="text-danger fw-bolder">
             {" "}
             <span className="text-cyan fw-semi-bolder">
               Order Status:{" "}
             </span>{" "}
             {detail?.status}
-          </h6>
+          </h6>) 
+        }
+          
         </Card.Body>
         <Card.Footer>
           <div className="client-info p-2">
