@@ -15,7 +15,7 @@ const MyOrders = () => {
       .then((data) => {
         setMyOrders(data);
       });
-  }, []);
+  }, [myOrders]);
   
 
   useEffect(() => {

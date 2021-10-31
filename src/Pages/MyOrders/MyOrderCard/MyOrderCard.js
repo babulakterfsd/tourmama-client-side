@@ -1,12 +1,8 @@
 import React from "react";
 import { Card, Col, Button } from "react-bootstrap";
-import { useHistory } from "react-router";
 import "./MyOrderCard.css";
 
 const SinglepackageCard = ({ detail }) => {
-
-  const history = useHistory();
-    const redirect_uri = "/";
   
 
   //delete a package
@@ -23,7 +19,6 @@ const SinglepackageCard = ({ detail }) => {
           console.log(data);
           if (data.deletedCount > 0) {
             alert("Deleted Successfully !");
-            history.push(redirect_uri);
           }
         });
     }
@@ -53,7 +48,7 @@ const SinglepackageCard = ({ detail }) => {
           <span className="text-danger fw-bolder"> <span className="text-cyan fw-semi-bolder">Order Status : </span> {detail?.status}</span>
         </Card.Body>
         <Card.Footer className="d-flex justify-content-center">
-            <Button onClick={() => handleDeletePack(detail?._id)} className="btn-danger text-white  py-2 px-3">Cancel Order</Button>
+            <Button onClick={() => handleDeletePack(detail?._id)} className="btn-danger shadow-none text-white  py-2 px-3">Cancel Order</Button>
         </Card.Footer>
       </Card>
     </Col>

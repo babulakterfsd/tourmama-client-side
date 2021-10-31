@@ -10,7 +10,7 @@ const ManageOrders = () => {
     fetch("https://radiant-shore-89532.herokuapp.com/allorder")
       .then((res) => res.json())
       .then((data) => setAllOrders(data));
-  }, []);
+  }, [allOrders]);
 
   useEffect(() => {
     document.title = "All Orders | TourMama";

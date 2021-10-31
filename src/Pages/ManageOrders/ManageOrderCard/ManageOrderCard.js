@@ -1,12 +1,8 @@
 import React from "react";
 import { Card, Col, Button } from "react-bootstrap";
-import { useHistory } from "react-router";
 import "./ManageOrderCard.css";
 
 const SinglepackageCard = ({ detail }) => {
-
-  const history = useHistory();
-  const redirect_uri = "/";
 
   //delete a package
   const handleDeletePack = (id) => {
@@ -22,7 +18,6 @@ const SinglepackageCard = ({ detail }) => {
           console.log(data);
           if (data.deletedCount > 0) {
             alert("Deleted Successfully !");
-            history.push(redirect_uri);
           }
         });
     }
@@ -42,7 +37,6 @@ const SinglepackageCard = ({ detail }) => {
       .then((data) => {
         if (data.modifiedCount > 0) {
           alert("Order Approved !");
-          history.push(redirect_uri);
         }
       });
   };
@@ -107,13 +101,13 @@ const SinglepackageCard = ({ detail }) => {
         <Card.Footer className="d-flex justify-content-between">
           <Button
             onClick={() => handleDeletePack(detail?._id)}
-            className="btn-danger text-white  py-2 px-3"
+            className="btn-danger shadow-none text-white  py-2 px-3"
           >
             Cancel Order
           </Button>
           <Button
             onClick={() => handleUpdate(detail?._id)}
-            className="btn-light-green py-2 px-3"
+            className="btn-light-green shadow-none py-2 px-3"
           >
             Approve Order
           </Button>
