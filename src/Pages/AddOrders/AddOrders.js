@@ -1,9 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Col, Container, Form, Row, Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { useHistory } from "react-router-dom";
 
 const AddOrders = () => {
+
+  useEffect(() => {
+    document.title = 'Add Package || TourMama'
+ },[]);
+
   const history = useHistory();
   const redirect_uri = "/";
   //react hook form
@@ -56,13 +61,14 @@ const AddOrders = () => {
               onSubmit={handleSubmit(onSubmit)}
               className="shadow-lg px-2 px-md-5 py-3 text-cyan"
             >
-              <h2 className="mb-4 text-center">
-                Try to fill all the field to keep it consistent
+              <h2 className="mb-2 text-center abril-font">
+                Add A New Tour Package !
               </h2>
+              <p className="text-cyan text-center mb-5">Currently we are allowing our users just to add city name, country name and a photo url. After Adding a package by random user, We'll add another values by default. </p>
 
               <Row className="mb-3">
                 <Form.Group as={Col} controlId="formGridCity">
-                  <Form.Label>City</Form.Label>
+                  <Form.Label>Destination City</Form.Label>
                   <Form.Control
                     placeholder="Bogra"
                     required
@@ -72,7 +78,7 @@ const AddOrders = () => {
                   />
                 </Form.Group>
                 <Form.Group as={Col} controlId="formGridCountry">
-                  <Form.Label>Country</Form.Label>
+                  <Form.Label> Destination Country</Form.Label>
                   <Form.Control
                     required
                     placeholder="Bangladesh"

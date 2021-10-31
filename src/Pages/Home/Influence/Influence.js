@@ -20,12 +20,7 @@ const Influence = () => {
                   Lets Go Travel with Us
                 </h2>
                 <p className="text-secondary mb-3">
-                  Donec dapibus mauris id odio ornare tempus. Duis sit amet
-                  accumsan justo, quis tempor ligula. Quisque quis pharetra
-                  felis. Ut quis consequat orci, at consequat felis. Suspendisse
-                  auctor laoreet placerat. Nam et risus non lacus dignissim
-                  lacinia sit amet nec eros. Nulla vel urna quis libero pharetra
-                  varius. Nulla tellus nunc.
+                Tourism is travel for pleasure or business; also the theory and practice of touring, the business of attracting, accommodating, and entertaining tourists, and the business of operating tours.Tourism is travel for pleasure or business; also the theory and practice of touring.
                 </p>
                 <Link to="/allpackages">
                   <Button className="btn-light-green p-3 ms-3 ms-lg-0 text-white fw-bold">

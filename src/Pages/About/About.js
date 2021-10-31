@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Container, Row} from "react-bootstrap";
+import { Card, Col, Container, Row} from "react-bootstrap";
 
 
 const About = () => {
@@ -79,6 +79,98 @@ const About = () => {
                 living to make movies
               </p>
             </div>
+          </Row>
+        </Container>
+      </section>
+
+      <section id="team" className="py-5 mt-lg-5">
+        <Container>
+          <Row>
+            <h6 className="text-light-green text-center">Our Team</h6>
+            <h2 className="text-center abril-font">Awesome Tour Guides</h2>
+            <p className="text-center mb-3 mb-lg-5">
+              Traveling fosters a medium to build human connections with one
+              another by learning about culture, food, new sites, music, and the
+              way people. Traveling fosters a medium to build human connections
+              with one another by learning about culture, food, new sites,
+              music, and the way people.
+            </p>
+          </Row>
+        </Container>
+        <Container>
+          <Row xs={1} md={2} lg={4}>
+            <Col className="mb-5">
+              <Card>
+                <Card.Img variant="top" src="https://i.ibb.co/dgfg3bk/guide1.png" />
+                <Card.Body>
+                  <h5 className="text-center text-cyan fw-semi-bold">
+                    Dia Martinez
+                  </h5>
+                </Card.Body>
+                <Card.Footer>
+                  <div className="d-flex justify-content-center">
+                    <i className="fab fa-google text-light-green me-4"></i>
+                    <i className="fab fa-facebook text-light-green me-4"></i>
+                    <i className="fab fa-twitter text-light-green me-4"></i>
+                    <i className="fab fa-github text-light-green"></i>
+                  </div>
+                </Card.Footer>
+              </Card>
+            </Col>
+            <Col className="mb-5">
+              <Card>
+                <Card.Img variant="top" src="https://i.ibb.co/tQDPwfj/guide2.png" />
+                <Card.Body>
+                  <h5 className="text-center text-cyan fw-semi-bold">
+                    Alexa Febrico
+                  </h5>
+                </Card.Body>
+                <Card.Footer>
+                  <div className="d-flex justify-content-center">
+                    <i className="fab fa-google text-light-green me-4"></i>
+                    <i className="fab fa-facebook text-light-green me-4"></i>
+                    <i className="fab fa-twitter text-light-green me-4"></i>
+                    <i className="fab fa-github text-light-green"></i>
+                  </div>
+                </Card.Footer>
+              </Card>
+            </Col>
+            <Col className="mb-5">
+              <Card>
+                <Card.Img variant="top" src="https://i.ibb.co/MRxwCTz/guide3.png" />
+                <Card.Body>
+                  <h5 className="text-center text-cyan fw-semi-bold">
+                    Jhon Daniel
+                  </h5>
+                </Card.Body>
+                <Card.Footer>
+                  <div className="d-flex justify-content-center">
+                    <i className="fab fa-google text-light-green me-4"></i>
+                    <i className="fab fa-facebook text-light-green me-4"></i>
+                    <i className="fab fa-twitter text-light-green me-4"></i>
+                    <i className="fab fa-github text-light-green"></i>
+                  </div>
+                </Card.Footer>
+              </Card>
+            </Col>
+            <Col className="mb-5">
+              <Card>
+                <Card.Img variant="top" src="https://i.ibb.co/fv6G1NK/guide4.png" />
+                <Card.Body>
+                  <h5 className="text-center text-cyan fw-semi-bold">
+                    Erica Xenifar
+                  </h5>
+                </Card.Body>
+                <Card.Footer>
+                  <div className="d-flex justify-content-center">
+                    <i className="fab fa-google text-light-green me-4"></i>
+                    <i className="fab fa-facebook text-light-green me-4"></i>
+                    <i className="fab fa-twitter text-light-green me-4"></i>
+                    <i className="fab fa-github text-light-green"></i>
+                  </div>
+                </Card.Footer>
+              </Card>
+            </Col>
           </Row>
         </Container>
       </section>

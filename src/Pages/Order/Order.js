@@ -8,7 +8,6 @@ const Order = () => {
   const { user } = useAuth();
   const { packid } = useParams();
 
-
   const [orderedPack, setOrderedPack] = useState({});
 
   useEffect(() => {
@@ -31,7 +30,6 @@ const Order = () => {
     data.status = "pending";
     data.email = user?.email;
     data.order = orderedPack;
-    
 
     fetch("https://radiant-shore-89532.herokuapp.com/placeorder", {
       method: "POST",
@@ -52,27 +50,34 @@ const Order = () => {
   return (
     <Container>
       <Row>
-        <div className="col-12 col-md-10 col-lg-8 mx-auto">
+        <div className="col-12 col-lg-6">
+          <div className="order-details my-5 p-3 shadow-lg">
+            <h3 className="text-center text-decoration-underline">
+              Order Details
+            </h3>
+            <img
+              src={orderedPack.img}
+              alt="destination"
+              className="img-fluid"
+            />
+            <h5 className="text-cyan my-2">
+              Your Selected Destination is{" "}
+              {`${orderedPack?.location?.city}, ${orderedPack?.location?.country}`}{" "}
+            </h5>
+            <h6>
+              Package Price Is ${orderedPack?.price} for single person ({orderedPack?.duration}) 
+            </h6>
+          </div>
+        </div>
+
+        <div className="col-12 col-lg-6">
           <div className="form-container py-5">
             <Form
               onSubmit={handleSubmit(onSubmit)}
               className="shadow-lg px-2 px-md-5 py-3 text-cyan"
             >
-              <h2 className="mb-4 text-center">
-                After Confirming Order, We'll Contact You Soon !
-              </h2>
-
-              <Row className="mb-3">
-                <h4>
-                  Your Destination Is{" "}
-                  <span className="text-light-green">{`${orderedPack?.location?.city}, ${orderedPack?.location?.country}`}</span>{" "}
-                </h4>
-                <h4>
-                  Package Price Is{" "}
-                  <span className="text-light-green">{orderedPack?.price}</span>{" "}
-                </h4>
-              </Row>
-
+              <h2 className=" text-center mb-2">We'll Contact You Soon !</h2>
+              <p className="text-cyan text-center mb-5">You can canel order from My orders section within next 7 days. We keep our clients happy.</p>
               <Row className="mb-3">
                 <Form.Group as={Col} controlId="formGridName">
                   <Form.Label>Your Name</Form.Label>

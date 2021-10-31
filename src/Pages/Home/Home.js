@@ -4,6 +4,7 @@ import Banner from '../Home/Banner/Banner'
 import PopularPackages from '../Home/PopularPackages/PopularPackages'
 import Influence from './Influence/Influence';
 import Contact from './Contact/Contact'
+import Destination from './Destination/Destination';
 
 const Home = () => {
     useEffect(() => {
@@ -15,6 +16,7 @@ const Home = () => {
          <Banner></Banner>
          <PopularPackages></PopularPackages>
          <Influence></Influence>
+         <Destination></Destination>
          <Contact></Contact>
         </>
     );
